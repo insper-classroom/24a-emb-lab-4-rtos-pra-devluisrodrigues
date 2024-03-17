@@ -68,8 +68,8 @@ void echo_task(void *p) {
 
     EventTime et;
     int rise_time = 0;
-    int fall_time = 0;
-    int distance = 0;
+    int fall_time;
+    int distance;
     while (1) {
         if (xQueueReceive(xQueueTime, &et, pdMS_TO_TICKS(1000))) {
             if (et.event == 0x8) {
